@@ -2,11 +2,6 @@
 
 **An AI-Powered Carbon Footprint Monitoring System for Campus Environments**
 
-> Developed by: **Bhakti Ambrale**, **Ayush Chaurasia**, **Shravani Sarang**, **Karan Yadav**  
-> Supervisor: **Dr. Khushabu Agrawal**  
-> Department: Information Technology
-
----
 
 ## Table of Contents
 
