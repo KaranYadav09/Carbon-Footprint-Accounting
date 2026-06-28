@@ -2,7 +2,6 @@
 
 **An AI-Powered Carbon Footprint Monitoring System for Campus Environments**
 
-
 ## Table of Contents
 
 1. [Project Overview](#project-overview)
