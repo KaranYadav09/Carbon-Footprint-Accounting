@@ -1,0 +1,222 @@
+/* PlantTree.css */
+
+.plant-tree-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: 'Inter', system-ui, sans-serif;
+    color: #1f2937;
+}
+
+.plant-header {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.plant-header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 0.5rem;
+}
+
+.plant-header p {
+    color: #6b7280;
+    font-size: 1rem;
+}
+
+.plant-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    border: 1px solid #e5e7eb;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 0.5rem;
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    font-size: 0.95rem;
+    transition: all 0.2s;
+    box-sizing: border-box;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #10b981;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+/* File Upload Styles */
+.file-upload-box {
+    border: 2px dashed #d1d5db;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    background-color: #f9fafb;
+    transition: all 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.file-upload-box:hover {
+    border-color: #10b981;
+    background-color: #ecfdf5;
+}
+
+.file-upload-box.has-file {
+    border-style: solid;
+    border-color: #10b981;
+    background-color: #f0fdf4;
+    padding: 0.5rem;
+}
+
+.preview-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+.remove-file {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    padding: 4px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.upload-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: #6b7280;
+}
+
+/* Location Button */
+.btn-location {
+    width: 100%;
+    padding: 0.875rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.2s;
+    border: 1px solid #e5e7eb;
+    background-color: white;
+    color: #374151;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn-location:hover:not(:disabled) {
+    background-color: #f3f4f6;
+    border-color: #d1d5db;
+}
+
+.btn-location.success {
+    background-color: #ecfdf5;
+    color: #059669;
+    border-color: #10b981;
+}
+
+/* Submit Button */
+.btn-submit {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: white;
+    border: none;
+    cursor: pointer;
+    background-color: #16a34a;
+    transition: all 0.2s;
+    margin-top: 1rem;
+}
+
+.btn-submit:hover:not(:disabled) {
+    background-color: #15803d;
+}
+
+.btn-submit:disabled {
+    background-color: #9ca3af;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Success State */
+.success-container {
+    text-align: center;
+    padding: 3rem 1rem;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.success-icon {
+    width: 80px;
+    height: 80px;
+    background-color: #d1fae5;
+    color: #059669;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+.success-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+}
+
+.success-desc {
+    color: #4b5563;
+    margin-bottom: 2rem;
+}
+
+.btn-dashboard {
+    background-color: #16a34a;
+    color: white;
+    padding: 0.75rem 2rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

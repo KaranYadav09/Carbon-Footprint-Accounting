@@ -1,0 +1,806 @@
+{
+  "user": {
+    "count": 10,
+    "columns": [
+      {
+        "id": 0,
+        "name": "id",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default_value": null,
+        "pk": 1
+      },
+      {
+        "id": 1,
+        "name": "username",
+        "type": "VARCHAR(80)",
+        "notnull": 1,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 2,
+        "name": "password_hash",
+        "type": "VARCHAR(128)",
+        "notnull": 1,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 3,
+        "name": "role",
+        "type": "VARCHAR(20)",
+        "notnull": 1,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 4,
+        "name": "name",
+        "type": "VARCHAR(200)",
+        "notnull": 0,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 5,
+        "name": "email",
+        "type": "VARCHAR(200)",
+        "notnull": 0,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 6,
+        "name": "department",
+        "type": "VARCHAR(200)",
+        "notnull": 0,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 7,
+        "name": "student_id",
+        "type": "VARCHAR(200)",
+        "notnull": 0,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 8,
+        "name": "phone_number",
+        "type": "VARCHAR(200)",
+        "notnull": 0,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 9,
+        "name": "profile_picture",
+        "type": "VARCHAR(200)",
+        "notnull": 0,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 10,
+        "name": "eco_points",
+        "type": "INTEGER",
+        "notnull": 0,
+        "default_value": "0",
+        "pk": 0
+      },
+      {
+        "id": 11,
+        "name": "co2_saved_kg",
+        "type": "FLOAT",
+        "notnull": 0,
+        "default_value": "0",
+        "pk": 0
+      },
+      {
+        "id": 12,
+        "name": "trees_planted",
+        "type": "INTEGER",
+        "notnull": 0,
+        "default_value": "0",
+        "pk": 0
+      },
+      {
+        "id": 13,
+        "name": "events_attended",
+        "type": "INTEGER",
+        "notnull": 0,
+        "default_value": "0",
+        "pk": 0
+      },
+      {
+        "id": 14,
+        "name": "status",
+        "type": "VARCHAR(20)",
+        "notnull": 0,
+        "default_value": "'approved'",
+        "pk": 0
+      }
+    ]
+  },
+  "activity_log": {
+    "count": 152,
+    "columns": [
+      {
+        "id": 0,
+        "name": "id",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default_value": null,
+        "pk": 1
+      },
+      {
+        "id": 1,
+        "name": "activity_type",
+        "type": "VARCHAR(80)",
+        "notnull": 1,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 2,
+        "name": "usage_kwh",
+        "type": "FLOAT",
+        "notnull": 1,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 3,
+        "name": "calculated_co2e_kg",
+        "type": "FLOAT",
+        "notnull": 1,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 4,
+        "name": "timestamp",
+        "type": "DATETIME",
+        "notnull": 1,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 5,
+        "name": "user_id",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 6,
+        "name": "metadata_info",
+        "type": "TEXT",
+        "notnull": 0,
+        "default_value": null,
+        "pk": 0
+      }
+    ]
+  },
+  "commute_log": {
+    "count": 25,
+    "columns": [
+      {
+        "id": 0,
+        "name": "id",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default_value": null,
+        "pk": 1
+      },
+      {
+        "id": 1,
+        "name": "user_id",
+        "type": "INTEGER",
+        "notnull": 0,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 2,
+        "name": "transport_mode",
+        "type": "VARCHAR(50)",
+        "notnull": 0,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 3,
+        "name": "distance_km",
+        "type": "FLOAT",
+        "notnull": 0,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 4,
+        "name": "eco_points",
+        "type": "INTEGER",
+        "notnull": 0,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 5,
+        "name": "co2_saved",
+        "type": "FLOAT",
+        "notnull": 0,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 6,
+        "name": "timestamp",
+        "type": "DATETIME",
+        "notnull": 0,
+        "default_value": null,
+        "pk": 0
+      }
+    ]
+  },
+  "tree_plantation": {
+    "count": 10,
+    "columns": [
+      {
+        "id": 0,
+        "name": "id",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default_value": null,
+        "pk": 1
+      },
+      {
+        "id": 1,
+        "name": "user_id",
+        "type": "INTEGER",
+        "notnull": 0,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 2,
+        "name": "tree_type",
+        "type": "VARCHAR(100)",
+        "notnull": 0,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 3,
+        "name": "photo_url",
+        "type": "VARCHAR(300)",
+        "notnull": 0,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 4,
+        "name": "selfie_url",
+        "type": "VARCHAR(300)",
+        "notnull": 0,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 5,
+        "name": "status",
+        "type": "VARCHAR(50)",
+        "notnull": 0,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 6,
+        "name": "timestamp",
+        "type": "DATETIME",
+        "notnull": 0,
+        "default_value": null,
+        "pk": 0
+      }
+    ]
+  },
+  "event_proof": {
+    "count": 0,
+    "columns": [
+      {
+        "id": 0,
+        "name": "id",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default_value": null,
+        "pk": 1
+      },
+      {
+        "id": 1,
+        "name": "user_id",
+        "type": "INTEGER",
+        "notnull": 0,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 2,
+        "name": "event_name",
+        "type": "VARCHAR(200)",
+        "notnull": 0,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 3,
+        "name": "photo_url",
+        "type": "VARCHAR(300)",
+        "notnull": 0,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 4,
+        "name": "selfie_url",
+        "type": "VARCHAR(300)",
+        "notnull": 0,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 5,
+        "name": "reward_points",
+        "type": "INTEGER",
+        "notnull": 0,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 6,
+        "name": "status",
+        "type": "VARCHAR(50)",
+        "notnull": 0,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 7,
+        "name": "timestamp",
+        "type": "DATETIME",
+        "notnull": 0,
+        "default_value": null,
+        "pk": 0
+      }
+    ]
+  },
+  "event": {
+    "count": 3,
+    "columns": [
+      {
+        "id": 0,
+        "name": "id",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default_value": null,
+        "pk": 1
+      },
+      {
+        "id": 1,
+        "name": "title",
+        "type": "VARCHAR(200)",
+        "notnull": 1,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 2,
+        "name": "description",
+        "type": "TEXT",
+        "notnull": 0,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 3,
+        "name": "date",
+        "type": "VARCHAR(50)",
+        "notnull": 0,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 4,
+        "name": "time",
+        "type": "VARCHAR(50)",
+        "notnull": 0,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 5,
+        "name": "location",
+        "type": "VARCHAR(200)",
+        "notnull": 0,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 6,
+        "name": "image_url",
+        "type": "VARCHAR(300)",
+        "notnull": 0,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 7,
+        "name": "reward_points",
+        "type": "INTEGER",
+        "notnull": 0,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 8,
+        "name": "status",
+        "type": "VARCHAR(50)",
+        "notnull": 0,
+        "default_value": null,
+        "pk": 0
+      }
+    ]
+  },
+  "event_participant": {
+    "count": 3,
+    "columns": [
+      {
+        "id": 0,
+        "name": "id",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default_value": null,
+        "pk": 1
+      },
+      {
+        "id": 1,
+        "name": "user_id",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 2,
+        "name": "event_id",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 3,
+        "name": "status",
+        "type": "VARCHAR(50)",
+        "notnull": 0,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 4,
+        "name": "proof_photo",
+        "type": "VARCHAR(300)",
+        "notnull": 0,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 5,
+        "name": "proof_selfie",
+        "type": "VARCHAR(300)",
+        "notnull": 0,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 6,
+        "name": "proof_lat",
+        "type": "FLOAT",
+        "notnull": 0,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 7,
+        "name": "proof_lng",
+        "type": "FLOAT",
+        "notnull": 0,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 8,
+        "name": "proof_timestamp",
+        "type": "DATETIME",
+        "notnull": 0,
+        "default_value": null,
+        "pk": 0
+      }
+    ]
+  },
+  "achievement": {
+    "count": 21,
+    "columns": [
+      {
+        "id": 0,
+        "name": "id",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default_value": null,
+        "pk": 1
+      },
+      {
+        "id": 1,
+        "name": "name",
+        "type": "VARCHAR(100)",
+        "notnull": 1,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 2,
+        "name": "description",
+        "type": "VARCHAR(200)",
+        "notnull": 0,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 3,
+        "name": "category",
+        "type": "VARCHAR(50)",
+        "notnull": 0,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 4,
+        "name": "requirement_type",
+        "type": "VARCHAR(50)",
+        "notnull": 0,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 5,
+        "name": "requirement_value",
+        "type": "FLOAT",
+        "notnull": 0,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 6,
+        "name": "icon_url",
+        "type": "VARCHAR(300)",
+        "notnull": 0,
+        "default_value": null,
+        "pk": 0
+      }
+    ]
+  },
+  "user_achievement": {
+    "count": 14,
+    "columns": [
+      {
+        "id": 0,
+        "name": "id",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default_value": null,
+        "pk": 1
+      },
+      {
+        "id": 1,
+        "name": "user_id",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 2,
+        "name": "achievement_id",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 3,
+        "name": "timestamp",
+        "type": "DATETIME",
+        "notnull": 0,
+        "default_value": null,
+        "pk": 0
+      }
+    ]
+  },
+  "notification": {
+    "count": 0,
+    "columns": [
+      {
+        "id": 0,
+        "name": "id",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default_value": null,
+        "pk": 1
+      },
+      {
+        "id": 1,
+        "name": "user_id",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 2,
+        "name": "message",
+        "type": "VARCHAR(255)",
+        "notnull": 1,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 3,
+        "name": "read",
+        "type": "BOOLEAN",
+        "notnull": 0,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 4,
+        "name": "timestamp",
+        "type": "DATETIME",
+        "notnull": 0,
+        "default_value": null,
+        "pk": 0
+      }
+    ]
+  },
+  "challenge": {
+    "count": 3,
+    "columns": [
+      {
+        "id": 0,
+        "name": "id",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default_value": null,
+        "pk": 1
+      },
+      {
+        "id": 1,
+        "name": "title",
+        "type": "VARCHAR(100)",
+        "notnull": 1,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 2,
+        "name": "description",
+        "type": "TEXT",
+        "notnull": 0,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 3,
+        "name": "reward_points",
+        "type": "INTEGER",
+        "notnull": 0,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 4,
+        "name": "goal_value",
+        "type": "FLOAT",
+        "notnull": 1,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 5,
+        "name": "category",
+        "type": "VARCHAR(50)",
+        "notnull": 1,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 6,
+        "name": "start_date",
+        "type": "VARCHAR(50)",
+        "notnull": 0,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 7,
+        "name": "end_date",
+        "type": "VARCHAR(50)",
+        "notnull": 0,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 8,
+        "name": "created_at",
+        "type": "DATETIME",
+        "notnull": 0,
+        "default_value": null,
+        "pk": 0
+      }
+    ]
+  },
+  "challenge_participant": {
+    "count": 0,
+    "columns": [
+      {
+        "id": 0,
+        "name": "id",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default_value": null,
+        "pk": 1
+      },
+      {
+        "id": 1,
+        "name": "user_id",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 2,
+        "name": "challenge_id",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 3,
+        "name": "progress",
+        "type": "FLOAT",
+        "notnull": 0,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 4,
+        "name": "completed",
+        "type": "BOOLEAN",
+        "notnull": 0,
+        "default_value": null,
+        "pk": 0
+      },
+      {
+        "id": 5,
+        "name": "joined_at",
+        "type": "DATETIME",
+        "notnull": 0,
+        "default_value": null,
+        "pk": 0
+      }
+    ]
+  }
+}

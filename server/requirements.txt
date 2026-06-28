@@ -1,0 +1,17 @@
+flask
+flask-cors
+flask-sqlalchemy
+flask-bcrypt
+flask-jwt-extended
+python-dotenv
+Pillow
+pdf2image
+opencv-python
+numpy
+pdfplumber
+paddlepaddle
+paddleocr
+werkzeug
+flask-mail
+psycopg2-binary
+beautifulsoup4

@@ -1,0 +1,246 @@
+/* --- client/src/pages/LoginPage.css --- */
+
+/* 1. Global Reset: Ensures consistent styling across browsers */
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Color Palette based on the image */
+:root {
+  --primary-green: #38c172;        /* Main button and link green */
+  --primary-green-darker: #2d995b; /* Hover state for green */
+  --dark-text: #3d4852;            /* "Welcome to EcoTrace" text */
+  --secondary-text: #606f7b;       /* Subtitle and helper text */
+  --light-bg: #ffffff;             /* Left panel background */
+  --input-bg: #fdfdfe;             /* Input field background */
+  --input-border: #dae1e7;         /* Input field border */
+  --decorative-gradient-start: #38c172; /* Start of right panel gradient */
+  --decorative-gradient-end: #2d995b;   /* End of right panel gradient */
+  --text-on-green: #ffffff;        /* Text color on the green panel */
+  --border-radius: 8px;
+  --shadow-subtle: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Main container for the full page */
+.login-page-container {
+  display: flex;
+  min-height: 100vh;
+  width: 100vw; /* Ensures it takes full width */
+  overflow: hidden; /* Prevents scrollbars if content overflows slightly */
+}
+
+/* The panel that holds the two sections (login form and decorative) */
+.login-panel {
+  display: flex;
+  width: 100%; /* Stretches to fill the container */
+  background-color: var(--light-bg);
+}
+
+/* Left side with the login form */
+.login-form-section {
+  flex: 1; /* Takes equal space as decorative-section on larger screens */
+  padding: 3rem 2.5rem; /* Consistent padding around content */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically center content */
+  align-items: center; /* Horizontally center content */
+}
+
+.form-content {
+  width: 100%;
+  max-width: 400px; /* Constrain form width for readability */
+  text-align: left; /* Align text within form content to left */
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  color: var(--dark-text); /* Ensure link color matches heading */
+}
+.logo-link span { /* Placeholder for a logo image or custom SVG */
+  font-size: 2rem;
+  /* If you use a real image, remove this filter */
+  filter: grayscale(100%) brightness(0) invert(65%) sepia(35%) saturate(1500%) hue-rotate(100deg);
+}
+.logo-link h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--dark-text);
+  margin: 0; /* Remove default margin for h1 */
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: var(--secondary-text);
+  margin-top: 0.5rem; /* Space below title */
+  margin-bottom: 2rem; /* Space before inputs */
+}
+
+/* Input field styles */
+.input-group {
+  position: relative;
+  margin-bottom: 1.5rem; /* Space between input fields */
+}
+.input-icon {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+  color: var(--secondary-text); /* Icon color */
+  font-size: 1.1rem;
+}
+.input-group input {
+  width: 100%;
+  padding: 0.9rem 1rem 0.9rem 3rem; /* Adjusted padding for icon */
+  border: 1px solid var(--input-border);
+  border-radius: var(--border-radius);
+  background-color: var(--input-bg);
+  font-size: 1rem;
+  color: var(--dark-text);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+.input-group input:focus {
+  outline: none;
+  border-color: var(--primary-green);
+  box-shadow: 0 0 0 2px rgba(56, 193, 114, 0.2); /* Green focus halo */
+}
+.input-group input::placeholder {
+  color: var(--secondary-text);
+}
+
+/* Login button styles */
+.login-btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem; /* Generous padding for a prominent button */
+  border: none;
+  border-radius: var(--border-radius);
+  background-color: var(--primary-green);
+  color: var(--text-on-green);
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  box-shadow: var(--shadow-subtle);
+}
+.login-btn:hover {
+  background-color: var(--primary-green-darker);
+  transform: translateY(-1px); /* Subtle lift effect */
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+.login-btn:active {
+  transform: translateY(0);
+}
+.login-btn:disabled {
+  background-color: #a0aec0;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Error message style */
+.error-message {
+  padding: 0.75rem;
+  border-radius: var(--border-radius);
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  color: #dc3545; /* Red error text */
+  background-color: #f8d7da; /* Light red background */
+  border: 1px solid #f5c6cb;
+}
+
+/* "Don't have an account?" text and link */
+.auth-switch {
+  text-align: left; /* Aligned to left like the image */
+  margin-top: 2rem; /* Space above link */
+  font-size: 0.95rem;
+  color: var(--secondary-text);
+}
+.auth-switch a {
+  color: var(--primary-green);
+  font-weight: 600;
+  text-decoration: none;
+  transition: text-decoration 0.2s ease;
+}
+.auth-switch a:hover {
+  text-decoration: underline;
+}
+
+/* Right side with a decorative panel (visible on larger screens) */
+.decorative-section {
+  flex: 1; /* Takes equal space as login-form-section */
+  background: linear-gradient(135deg, var(--decorative-gradient-start), var(--decorative-gradient-end));
+  color: var(--text-on-green);
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.decorative-section h2 {
+  font-size: 2.75rem; /* Adjusted font size */
+  font-weight: 800; /* Bolder font weight */
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+.decorative-section p {
+  font-size: 1.15rem; /* Slightly larger paragraph */
+  line-height: 1.6;
+  opacity: 0.95;
+  max-width: 450px; /* Constrain width for readability */
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 992px) {
+  /* On medium screens, adjust padding */
+  .login-form-section {
+    padding: 2rem;
+  }
+  .decorative-section {
+    padding: 2rem;
+  }
+  .decorative-section h2 {
+    font-size: 2.2rem;
+  }
+  .decorative-section p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .login-page-container {
+    background-color: #f0f4f8; /* Light gray background for mobile view */
+    padding: 1.5rem; /* Add padding around the card on mobile */
+    align-items: center; /* Center the panel vertically */
+  }
+  .login-panel {
+    flex-direction: column; /* Stack sections vertically */
+    border-radius: 12px; /* Rounded corners for the mobile card */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Shadow for the mobile card */
+    width: 100%; /* Take full width within padding */
+    max-width: 500px; /* Max width for the card on mobile */
+  }
+  .decorative-section {
+    display: none; /* Hide the green decorative panel on smaller screens */
+  }
+  .login-form-section {
+    padding: 2rem 1.5rem; /* Adjusted padding for mobile form */
+  }
+  .form-content {
+    max-width: none; /* Allow form content to fill available width */
+  }
+}

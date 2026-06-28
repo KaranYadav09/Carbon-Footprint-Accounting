@@ -1,0 +1,284 @@
+/* --- client/src/components/DashboardLayout/DashboardLayout.css --- */
+
+/* --- 1. UPDATED: Color & Style Variables to match Login Page --- */
+:root {
+  --sidebar-bg: #ecfdf5;
+  /* Light green sidebar background */
+  --sidebar-text: #475569;
+  /* Darker slate gray text for inactive links */
+  --sidebar-text-hover: #1e293b;
+  /* Dark text for hover */
+  --sidebar-hover-bg: rgba(16, 185, 129, 0.08);
+  /* Very subtle mint background for hover */
+  --sidebar-active-bg: transparent;
+  /* No background pill for active link to match new image */
+  --sidebar-active-text: #059669;
+  /* Emerald green text for active link */
+  --main-content-bg: #f8fafc;
+  /* Default background */
+  --border-color: #d1fae5;
+  /* Light green border */
+  --text-dark: #1e293b;
+  --border-radius-md: 12px;
+}
+
+/* --- Global Layout --- */
+.dashboard-layout {
+  display: flex;
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+}
+
+/* --- 2. UPDATED: Sidebar Styles with new light background --- */
+.sidebar {
+  width: 280px;
+  background-color: var(--sidebar-bg);
+  /* Changed to white */
+  color: var(--sidebar-text);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  border-right: 1px solid var(--border-color);
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.sidebar-logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  width: 48px;
+  background: #10b981;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+  flex-shrink: 0;
+}
+
+.sidebar-logo-icon {
+  color: white;
+}
+
+.sidebar-header h1 {
+  font-size: 1.5rem;
+  color: #0f172a;
+  margin: 0;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.sidebar-section-title {
+  padding: 1.5rem 1.5rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #94a3b8;
+  /* Lighter text for section title */
+}
+
+/* --- 3. UPDATED: Navigation Links for the new theme --- */
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.8rem 1rem;
+  border-radius: var(--border-radius-md);
+  text-decoration: none;
+  color: var(--sidebar-text);
+  font-weight: 500;
+  font-size: 1.05rem;
+  letter-spacing: 0.01em;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.nav-icon {
+  font-size: 1.3rem;
+  color: #64748b;
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+  background-color: var(--sidebar-hover-bg);
+  color: var(--sidebar-text-hover);
+}
+
+.nav-link.active {
+  background-color: var(--sidebar-active-bg);
+  color: var(--sidebar-active-text);
+  font-weight: 600;
+}
+
+.nav-link.active .nav-icon {
+  color: var(--sidebar-active-text);
+}
+
+.active-dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--sidebar-active-text);
+  border-radius: 50%;
+  margin-left: auto;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.nav-link.active .active-dot {
+  opacity: 1;
+}
+
+/* --- Sidebar Footer --- */
+.sidebar-footer {
+  margin-top: auto;
+  padding: 1.5rem 1rem;
+}
+
+.logout-btn {
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* --- Main Content Area --- */
+.main-content {
+  flex-grow: 1;
+  padding: 2.5rem;
+  overflow-y: auto;
+  min-height: 100vh;
+  transition: background-color 0.3s ease;
+}
+
+/* Specific background styles mapping to the JSX classes */
+.main-content.light-mint-bg {
+  background-color: #ecfdf5; /* VERY light cyan/teal background */
+}
+
+.main-content.white-bg {
+  background-color: #f8fafc; /* Subtle whitish gray for excluded pages */
+}
+
+/* Hide on desktop */
+.mobile-bottom-nav {
+  display: none;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+  .mobile-sidebar-toggle {
+    display: flex !important;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -280px;
+    height: 100vh;
+    width: 280px;
+    z-index: 1005;
+    transition: left 0.3s ease-in-out;
+    box-shadow: 4px 0 15px rgba(0,0,0,0.05);
+    background-color: #ffffff !important;
+    align-items: stretch;
+  }
+
+  .sidebar.open {
+    left: 0 !important;
+  }
+
+  .main-content {
+    padding: 1rem !important;
+    padding-top: 70px !important; /* Avoid overlay top bar collisions */
+    padding-bottom: 80px !important; /* Leave offset gap for bottom nav */
+    width: 100%;
+  }
+
+  /* --- Mobile Bottom Navigation --- */
+  .mobile-bottom-nav {
+    display: flex !important;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    border-top: 1px solid var(--border-color);
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+    justify-content: space-around;
+    padding: 10px 0;
+    height: 60px;
+    box-sizing: border-box;
+  }
+
+  .bottom-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    text-decoration: none;
+    color: #64748b;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.75rem;
+    font-weight: 600;
+    flex: 1;
+    transition: all 0.2s ease;
+  }
+
+  .bottom-nav-item:hover, .bottom-nav-item.active {
+    color: #10b981;
+  }
+
+  .bottom-nav-item.active {
+    font-weight: 700;
+  }
+
+  .sidebar-header h1,
+  .nav-link span,
+  .sidebar-section-title,
+  .active-dot {
+    display: block !important;
+  }
+
+  .sidebar-logo-container {
+    display: flex !important;
+  }
+
+  .sidebar-logo-container {
+    width: 40px;
+    height: 40px;
+  }
+
+  .sidebar-header,
+  .nav-links li,
+  .sidebar-footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .nav-link {
+    justify-content: center;
+    padding: 0.9rem;
+  }
+}
